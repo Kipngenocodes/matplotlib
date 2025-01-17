@@ -25,3 +25,18 @@ plt.legend()
 
 # Display the plot
 plt.show()
+
+# usinf the The Hex RGB or RGBA String format to set the color
+# Example of data
+t = np.linspace(0.0, 2.0, 201)
+y = np.sin(t)
+
+# Hex string for specifying axis facecolor
+fig, ax = plt.subplots(figsize = (10,6))
+ax.set_facecolor("#eafff5")
+
+# Plotting the sine wave and Data
+plt.plot(t, y)
+
+# Showing the graph
+plt.show()
