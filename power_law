@@ -1,0 +1,1 @@
+This normalization is useful to remap colors onto a power-law relationship using the colors.PowerNorm() class.
