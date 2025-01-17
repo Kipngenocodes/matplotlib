@@ -20,3 +20,4 @@ pc = ax[1].imshow(Z**2 * 100, cmap='plasma',
 fig.colorbar(pc, ax=ax[1], extend='both')
 ax[1].set_title('Linear Normalization')
 plt.show()
+
