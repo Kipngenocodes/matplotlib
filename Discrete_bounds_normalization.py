@@ -1,14 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib_color import colors 
+import matplotlib.colors as colors
 
-
-# Create Discrete Bounds  Normalization
-'''colors.BoundaryNorm. This is particularly useful when data needs to be
- mapped between specified boundaries with linearly distributed colors.
-''' 
-
-X, Y = np.meshgrid(np.linspace(-3, 3, 150), np.linspace(-3, 3, 150))
+X, Y = np.meshgrid(np.linspace(-3, 3, 128), np.linspace(-3, 3, 128))
 Z = (1 + np.sin(Y * 10.)) * X**2
 
 fig, ax = plt.subplots(2, 2, figsize=(7, 6), layout='constrained')
