@@ -47,3 +47,9 @@ for ax, name in zip(axs, cmap_list):
    ax.text(-0.1, 0.5, name, va='center', ha='right', fontsize=10,
       transform=ax.transAxes)
 
+# Turn off all ticks & spines, not just the ones with colormaps.
+for ax in axs:
+   ax.set_axis_off()
+
+# Show the plot
+plt.show()
