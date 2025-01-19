@@ -1,5 +1,6 @@
 import  matplotlib.pyplot as  plt
 import  numpy as np
+import matplotlib as mpl
 
 '''
 Choosing an appropriate colormap involves finding a suitable representation in 3D colorspace for your dataset.
@@ -23,4 +24,26 @@ Cyclic − Changes in the lightness of two colors,
 Qualitative − Miscellaneous colors with no specific order. 
             Used for representing information without ordering or relationships.'''
             
+# List of Sequential colormaps to visualize
+cmap_list = ['Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds',
+   'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu',
+   'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn', 'YlGn']
+
+# Plot the color gradients
+
+gradient = np.linspace(0, 1, 256)
+gradient = np.vstack((gradient, gradient))
+
+# Create figure and adjust figure height to the number of colormaps
+nrows = len(cmap_list)
+figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
+fig, axs = plt.subplots(nrows=nrows + 1, figsize=(7, figh))
+fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
+   left=0.2, right=0.99)
+axs[0].set_title('Sequential colormaps', fontsize=14)
+
+for ax, name in zip(axs, cmap_list):
+   ax.imshow(gradient, aspect='auto', cmap=mpl.colormaps[name])
+   ax.text(-0.1, 0.5, name, va='center', ha='right', fontsize=10,
+      transform=ax.transAxes)
 
