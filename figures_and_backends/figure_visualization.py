@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt 
 
+import matplotlib
+matplotlib.use('QtAgg')
+
 fig = plt.figure(figsize=(4, 2), facecolor='lightskyblue',
                  layout='constrained')
 fig.suptitle('Sample Figure')
